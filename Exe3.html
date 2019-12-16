@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio03</title> <!--3 – Peça ao usuário para digitar 5 números em uma caixa de texto. Verifique qual é o maior número e exiba-o.-->
+
+        <script>
+            const maiorNumero = () => {
+                var values = document.getElementById("numeros").value, maiorNum = 0;
+                numeros = values.split(",").map((a) => {
+                    return parseInt(a)
+                })
+                    for(i = 0; i < values.length; i++) {
+                        resultado = (numeros[i]>maiorNum) ? maiorNum = numeros[i] : maiorNum
+                    }
+
+                document.write(`O maior numero é ${maiorNum}`)
+
+            }
+        </script>
+
+</head>
+<body>
+    <i>Digite os numeros no espaço abaixo: </i> <br><br>
+    Números <input type="text" id="numeros">
+    <input type="button" value="Ver Maior Número" onclick="maiorNumero()">
+    
+</body>
+</html>

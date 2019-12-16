@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio04</title>
+    <script>
+        const verificarIdade = () => {
+            var values = document.getElementById("idades").value, maior18 = 0, menor18 = 0;
+            idades = values.split(",").map((a) => {
+                return parseInt(a)
+            })
+                for(i = 0; i < values.length; i++) {
+                   (idades>=18) ? maior18++ : menor18++
+                }
+                
+                document.write(`Das idades digitadas, ${maior18} são maiores de 18 anos e ${menor18} são menores de idade.`)
+        }
+    </script>
+
+</head>
+<body>
+    Idades <input type="text" id="idades">
+    <input type="button" value="Verificar" onclick="verificarIdade()" >   
+</body>
+</html>

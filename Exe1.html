@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercicio1</title>
+    <title>Exercicio02</title>
+    <!--1 – Calcule a média de diversas notas digitadas pelo usuário.-->
     <script>
-        function CalcularQuadrado() {
-            var numeros = document.getElementById("txtNumeros").value;
-            numeros = numeros.split(",");
-                for(i=0; i<numeros.length; i++) {
-                    Quadrado = parseInt(numeros[i]) * parseInt(numeros[i])
-                    document.write("O quadrado de "+ numeros[i] + " é "+ Quadrado + "<br>")
-                }
+        const calcularMedia = () => {
+            var values = document.getElementById("Notas").value, soma = 0;
+            notas = values.split(",").map((a) => {
+                return parseInt(a)
+            })
+            for (i = 0; i < notas.length; i++) {
+                soma += notas[i]
+            }   
+        
+
+            media = soma / notas.length
+            document.write(`A média das notas digitadas é ${media} <br>`)
+
+                var resultado = (media>=6) ? document.write("Aluno Aprovado") : document.write("Aluno Reprovado")
         }
 
-
     </script>
+
 </head>
+
 <body>
-    Números <input type="text" id="txtNumeros">
-    <input type="button" value="Calcular Quadrado" onclick="CalcularQuadrado()">
+    Notas <input type="text" id="Notas">
+    <input type="button" value="Ver Média" id="MediaNotas" onclick="calcularMedia()">
+
 </body>
+
 </html>
